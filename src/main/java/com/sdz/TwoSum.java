@@ -9,7 +9,7 @@ import java.util.Random;
  * @date : 2019/9/10
  */
 public class TwoSum {
-    public static Integer[] getIntegerArray(Integer length) {
+    private static Integer[] getIntegerArray(Integer length) {
         Random random = new Random();
         Integer[] integers = new Integer[length];
         for (int i = 0; i < length; i++) {
@@ -19,7 +19,7 @@ public class TwoSum {
         return integers;
     }
 
-    public static Integer[] getIndex(Integer[] integers, Integer sum) {
+    private static Integer[] getIndex(Integer[] integers, Integer sum) {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         for (int i = 0; i < integers.length; i++) {
             int rest = sum - integers[i];
