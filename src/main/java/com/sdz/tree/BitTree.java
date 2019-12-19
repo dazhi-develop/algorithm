@@ -3,12 +3,12 @@ package com.sdz.tree;
 import java.util.*;
 
 public class BitTree {
-    class TreeNode {
+    private class TreeNode {
         private TreeNode left;
         private TreeNode right;
         private Integer value;
 
-        public TreeNode(TreeNode left, TreeNode right, Integer value) {
+        private TreeNode(TreeNode left, TreeNode right, Integer value) {
             this.left = left;
             this.right = right;
             this.value = value;
@@ -17,7 +17,7 @@ public class BitTree {
         }
     }
 
-    public TreeNode createTree(List<Integer> list) {
+    private TreeNode createTree(List<Integer> list) {
         if (list == null || list.size() == 0) {
             return null;
         }
@@ -41,7 +41,7 @@ public class BitTree {
 
     }
 
-    public List<List<Integer>> findPath(TreeNode root, Integer target) {
+    private List<List<Integer>> findPath(TreeNode root, Integer target) {
         //保存所有符合条件的路径
         List<List<Integer>> listAll = new ArrayList<List<Integer>>();
         //当前路径
@@ -49,7 +49,7 @@ public class BitTree {
         return findPath(listAll, list, root, target);
     }
 
-    public List<List<Integer>> findPath(List<List<Integer>> listAll, List<Integer> list, TreeNode root, Integer target) {
+    private List<List<Integer>> findPath(List<List<Integer>> listAll, List<Integer> list, TreeNode root, Integer target) {
         if (root == null) return listAll;
         list.add(root.value);
         target -= root.value;
